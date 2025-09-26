@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة الإعلانات</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background-color: #f5f5f5;
-        }
-        .ad-container {
-            width: 300px;
-            height: 250px;
-            margin: 20px auto;
-            border: 2px dashed #888;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TADS Widget Test</title>
+  <!-- تحميل سكربت TADS -->
+  <script src="https://w.tads.me/widget.js"></script>
 </head>
 <body>
-    <h1>مرحبا بكم في صفحة TADS</h1>
-    <p>هنا يمكنك عرض إعلانك:</p>
+  <h2>إعلانات TADS</h2>
 
-    <!-- مكان الإعلان -->
-    <div class="ad-container">
-        إعلانك هنا
-    </div>
+  <!-- مكان عرض الإعلان -->
+  <div id="tads-container-799"></div>
 
-    <p>يمكنك تعديل هذا النص وإضافة أي كود إعلان داخله.</p>
+  <!-- تهيئة الويدجت -->
+  <script>
+    const adsNotFoundCallback = () => {
+      console.log('No ads found to show');
+    };
+
+    const onClickRewardCallback = (adID) => {
+      console.log('Clicked ad:', adID);
+    };
+
+    const adController = window.tads.init({
+      widgetId: "799", // استبدلها بالـ ID مال الويدجت
+      type: "static",
+      debug: true, // لما تنشر رسمي حطها false
+      onClickReward: onClickRewardCallback,
+      onAdsNotFound: adsNotFoundCallback
+    });
+
+    adController.loadAd()
+      .then(() => adController.showAd())
+      .catch((err) => console.error(err));
+  </script>
 </body>
 </html>
