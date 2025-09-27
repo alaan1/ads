@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TADS Widget Test</title>
-  <!-- تحميل سكربت TADS -->
-  <script src="https://w.tads.me/widget.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تجريبية</title>
+    <!-- كود Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9000516066650235"
+        crossorigin="anonymous"></script>
 </head>
 <body>
-  <h2>إعلانات TADS</h2>
+    <h1>مرحباً بك في الصفحة التجريبية</h1>
+    <p>هذا مثال على صفحة HTML تحتوي على كود Google AdSense.</p>
 
-  <!-- مكان عرض الإعلان -->
-  <div id="tads-container-835"></div>
-
-  <!-- تهيئة الويدجت -->
-  <script>
-    const adsNotFoundCallback = () => {
-      console.log('No ads found to show');
-    };
-
-    const onClickRewardCallback = (adID) => {
-      console.log('Clicked ad:', adID);
-    };
-
-    const adController = window.tads.init({
-      widgetId: "835", // استبدلها بالـ ID مال الويدجت
-      type: "static",
-      debug: true, // لما تنشر رسمي حطها false
-      onClickReward: onClickRewardCallback,
-      onAdsNotFound: adsNotFoundCallback
-    });
-
-    adController.loadAd()
-      .then(() => adController.showAd())
-      .catch((err) => console.error(err));
-  </script>
+    <!-- مثال إعلان -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9000516066650235"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
 </html>
